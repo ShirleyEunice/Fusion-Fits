@@ -5,6 +5,10 @@ const connectDB = require("./config/db");
 const userRoutes = require("../backend/routes/userRoutes");
 const productRoutes = require("../backend/routes/productRoutes");
 const cartRoutes = require("../backend/routes/cartRoutes");
+const checkoutRoutes = require("../backend/routes/checkoutRoutes");
+const orderRoutes = require("../backend/routes/orderRoutes");
+const uploadRoutes = require("../backend/routes/uploadRoutes");
+const subscribeRoutes = require("../backend/routes/subscriberRoute");
 
 
 const app = express();
@@ -26,6 +30,10 @@ app.get("/", (req, res)=> {
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/checkout", checkoutRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/upload", uploadRoutes);
+app.use("/api/", subscribeRoutes);
 
 app.listen(PORT, ()=>{
   console.log(`Server is running on http://localhost:${PORT}`);

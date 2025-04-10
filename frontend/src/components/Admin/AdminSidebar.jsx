@@ -13,7 +13,7 @@ const AdminSidebar = () => {
     <div className="p-6">
       <div className="mb-6">
         <Link to="/admin" className="text-3xl font-logo font-extrabold text-left">
-          Fashion Fits
+          Fusion Fits
         </Link>
         <div>
           <h2 className="text-xl font-medium mb-6 mt-9 text-center">Admin Dashboard</h2>
