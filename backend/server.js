@@ -11,6 +11,7 @@ const uploadRoutes = require("../backend/routes/uploadRoutes");
 const subscribeRoutes = require("../backend/routes/subscriberRoute");
 const adminRoutes = require("../backend/routes/adminRoutes");
 const productAdminRoutes = require("../backend/routes/productAdminRoutes");
+const orderAdminRoutes = require("../backend/routes/adminOrderRoutes");
 
 const app = express();
 app.use(express.json());
@@ -40,6 +41,7 @@ app.use("/api/", subscribeRoutes);
 //Admin
 app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
+app.use("/api/admin/orders", orderAdminRoutes);
 
 
 app.listen(PORT, ()=>{
