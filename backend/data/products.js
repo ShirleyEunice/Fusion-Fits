@@ -2,11 +2,11 @@
 
 const products = [
   {
-    name: "Classic Oxford Button-Down Shirt",
+    name: "Ascot Dark Brown Striped Relaxed-Fit Cotton T-Shirt",
     description:
-      "This classic Oxford shirt is tailored for a polished yet casual look. Crafted from high-quality cotton, it features a button-down collar and a comfortable, slightly relaxed fit. Perfect for both formal and casual occasions, it comes with long sleeves, a button placket, and a yoke at the back. The shirt is finished with a gently rounded hem and adjustable button cuffs.",
-    price: 39.99,
-    discountPrice: 34.99,
+      "Decked with stripes, this dark brown t-shirt from Ascot is crafted from pure cotton for ultimate comfort. The relaxed silhouette is styled with a classic crew neckline and half sleeves, making it a go-to for casual comfort.",
+    price: 1199,
+    discountPrice: 1299,
     countInStock: 20,
     sku: "OX-SH-001",
     category: "Top Wear",
@@ -18,11 +18,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=39",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Classic Oxford Button-Down Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=40",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Classic Oxford Button-Down Shirt Back View",
       },
     ],
@@ -46,11 +46,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=41",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Slim-Fit Stretch Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=42",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Slim-Fit Stretch Shirt Back View",
       },
     ],
@@ -74,11 +74,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=43",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Casual Denim Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=44",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Casual Denim Shirt Back View",
       },
     ],
@@ -102,11 +102,11 @@ const products = [
     gender: "Men",
     images: [
       {
-        url: "https://picsum.photos/500/500?random=45",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Printed Resort Shirt Front View",
       },
       {
-        url: "https://picsum.photos/500/500?random=1",
+        url: "https://www.westside.com/cdn/shop/files/301017158CHOCOLATEBROWN_1.jpg?v=1744382923&width=493",
         altText: "Printed Resort Shirt Back View",
       },
     ],

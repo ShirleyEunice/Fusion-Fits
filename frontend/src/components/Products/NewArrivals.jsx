@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const NewArrivals = () => {
 
@@ -9,100 +10,22 @@ const NewArrivals = () => {
   const [isDragging, setisDragging] = useState(false);
   const [startX, setstartX] = useState(0);
   const [scrollLeft, setscrollLeft] = useState(false);
-  const [scrollRight, setScrollRight] = useState(false);
   const [canScrollLeft, setcanScrollLeft] = useState(false);
   const [canScrollRight, setcanScrollRight] = useState(true);
 
-  const newArrivals = [
-    {
-      _id: "1",
-      name: "Stylish Jacket",
-      price: 120,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=1",
-          altText: "Stylish Jacket",
-        },
-      ],
-    },
-    {
-      _id: "2",
-      name: "Cuddly N Mushy Valentine Combo",
-      price: 845,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=2",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "3",
-      name: "A Forever Promise In White Roses",
-      price: 845,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=3",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "4",
-      name: "Love In Bloom Peach Roses",
-      price: 695,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=4",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "5",
-      name: "Pink Roses Of Affection",
-      price: 745,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=5",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "6",
-      name: "Love At First Sight",
-      price: 1145,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=6",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "7",
-      name: "Softly Into Forever With Gypsums",
-      price: 745,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=7",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-    {
-      _id: "8",
-      name: "Marvelous Wonderment",
-      price: 1195,
-      images: [
-        {
-          url: "https://picsum.photos/500?random=8",
-          altText: "Velvet Rose",
-        },
-      ],
-    },
-  ];
+  const [newArrivals, setNewArrivals] = useState([]);
+
+  useEffect(()=> {
+    const fetchNewArrivals = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/new-arrivals`);
+        setNewArrivals(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchNewArrivals();
+  }, []);
 
   const handleMouseDown = (e) => {
     setisDragging(true);
@@ -132,7 +55,8 @@ const NewArrivals = () => {
 
     if (container) {
       const leftScroll = container.scrollLeft;
-      const rightScrollable = container.scrollWidth > leftScroll + container.clientWidth;
+      const rightScrollable = 
+      container.scrollWidth > leftScroll + container.clientWidth;
 
       setcanScrollLeft(leftScroll > 0);
       setcanScrollRight(rightScrollable);
@@ -146,7 +70,7 @@ const NewArrivals = () => {
       updateScrollButtons();
       return () => container.removeEventListener("scroll", updateScrollButtons);
     }
-  }, []);
+  }, [newArrivals]);
 
   return (
     <section className="py-16 px-4 lg:px-0">

@@ -2,7 +2,7 @@ const jwt = require ("jsonwebtoken");
 const User = require ("../models/User");
 
 //Middleware to protect routes
-const protect = async (req, res, next) => {
+const protect = async (req, res, next) => { // req, res, next, err => Error handling minddleware
   let token;
 
   if (

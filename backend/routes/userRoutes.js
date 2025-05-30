@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
     if (user) return res.status(400).json({ message: "User already exists" });
 
     user = new User({ name, email, password });
-    await user.save();
+    await user.save(); // creates a new document
 
     // Create JWT Payload
     const payload = { user: { id: user._id, role: user.role } };
